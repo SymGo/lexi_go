@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myLexiGoApp import views as myLexiGoApp
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', myLexiGoApp.home),
 ]
