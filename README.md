@@ -1,2 +1,6 @@
 # User manual of LexiGo
-## blah blah blah
+
+
+### Packages
+#### Django 4.1.3
+#### DeepL 1.11.0
