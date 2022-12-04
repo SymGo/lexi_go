@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myLexiGoApp import views as myLexiGoApp
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', myLexiGoApp.home),
+    path('analyze/', csrf_exempt(myLexiGoApp.analyze)),
 ]
