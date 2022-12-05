@@ -21,13 +21,10 @@ async function sendText() {
     // ENVOI ET RÉCUPÉRATION DE LA RÉPONSE
     const response = await fetch('/analyze/', requete)
     const data = await response.json();
-    console.log(data);
+    console.log('Recuperation colis:', data);
 
     var outText = document.getElementById('outText');
     outText.innerHTML = ""; // vider la div si elle contenait déjà qqc
-    for (token in data.reponse) {
-        var tokenTuple = data.reponse[token];
-        console.log(tokenTuple[0], tokenTuple[1]);
-        outText.innerHTML += tokenTuple[0] + ' : ' + tokenTuple[1] + '<br/>';
-    }
+    outText.innerHTML = data.reponse;
+
 }

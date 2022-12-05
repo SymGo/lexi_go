@@ -1,1 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
 <h1>Bienvenue sur LexiGo</h1>
+
+<div class="d-flex">
+  <textarea name="main_area" id="inText" cols="100" rows="15"></textarea>
+  <button type="button" class="btn btn-primary" onclick="sendText()">Analyser!</button>
+
+  <textarea name="trans_area" id="outText" cols="100" rows="15"></textarea>
+
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'scripts/home.js' %}"></script>
+{% endblock %}
