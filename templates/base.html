@@ -9,61 +9,74 @@
     <title>LexiGo</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dosis">
 </head>
 
 <body>
+    <main>
+        <header>
+            <div class="px-3 py-2 bg-dark text-white">
+                <div class="container">
+                    <a class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+                        href="#">
+                        <p>
+                            <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100">
+                        </p>
+                    </a>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top background-color:'#9bb7de'">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <p>
-                    <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100">
-                </p>
-            </a>
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
 
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/"><i class="fa-regular fa-house"></i> Accueil
-                            <span class="visually-hidden">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about/"><i class="fa-regular fa-circle-info"></i> À propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact/"><i class="fa-regular fa-envelope"></i> Contact</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav me-auto justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sign/"><i class="fa-solid fa-arrow-right-to-bracket"></i> Connexion</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="/">
+                                <i class="fa-regular fa-house bi d-block mx-auto mb-1" width="24" height="24"></i>
+                                Accueil
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/about/">
+                                <i class="fa-regular fa-circle-info bi d-block mx-auto mb-1" width="24" height="24"></i>
+                                À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/contact/">
+                                <i class="fa-regular fa-envelope bi d-block mx-auto mb-1" width="24" height="24"></i>
+                                Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/sign/">
+                                <i class="fa-solid fa-arrow-right-to-bracket fa-envelope bi d-block mx-auto mb-1"
+                                    width="24" height="24"></i>
+                                Connexion</a>
+                        </li>
+
+                    </ul>
+
+                </div>
             </div>
 
-        </div>
-    </nav>
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
 
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+            <div class="container">
+                <footer class="py-3 my-4">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Accueil</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">À propos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+                    </ul>
+                    <p class="text-center text-muted">&copy; 2022 LexiGo</p>
+                </footer>
+            </div>
 
-    <div class="container">
-        <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Accueil</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">À propos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
-            </ul>
-            <p class="text-center text-muted">&copy; 2022 LexiGo</p>
-        </footer>
-    </div>
 
+        </header>
+    </main>
     {% block javascript%}{% endblock %}
-
 </body>
 
 </html>
