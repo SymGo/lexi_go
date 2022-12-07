@@ -17,48 +17,19 @@
 
 <body>
     <main>
-        <header>
-            <div class="px-3 py-2 bg-dark text-white" style="background-color: #9bb7de;">
-                <div class="container">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
-                            href="#">
-                            <p>
-                                <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100">
-                            </p>
-                        </a>
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100">
+            </a>
 
-                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-
-                            <li class="nav-item">
-                                <a class="nav-link active text-white" href="/">
-                                    <i class="fa-regular fa-house bi d-block mx-auto mb-1" width="24" height="24"></i>
-                                    Accueil
-                                    <span class="visually-hidden">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/about/">
-                                    <i class="fa-regular fa-circle-info bi d-block mx-auto mb-1" width="24"
-                                        height="24"></i>
-                                    À propos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/contact/">
-                                    <i class="fa-regular fa-envelope bi d-block mx-auto mb-1" width="24"
-                                        height="24"></i>
-                                    Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/sign/">
-                                    <i class="fa-solid fa-arrow-right-to-bracket fa-envelope bi d-block mx-auto mb-1"
-                                        width="24" height="24"></i>
-                                    Connexion</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Accueil</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">À Propos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2">Connexion</button>
+                <button type="button" class="btn btn-primary">S'inscrire</button>
             </div>
         </header>
 
