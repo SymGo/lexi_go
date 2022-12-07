@@ -24,60 +24,33 @@
                     <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100">
                 </a>
 
-                <ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="background-color: #004bad">
+                <ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#" class="nav-link px-2 active" aria-current="page">Accueil</a></li>
                     <li><a href="#" class="nav-link px-2">À Propos</a></li>
                     <li><a href="#" class="nav-link px-2">Contact</a></li>
                 </ul>
 
-                <div class="col-md-3 text-end" style="background-color: #004bad">
+                <div class="col-md-3 text-end">
                     <button type="button" class="btn btn-outline-primary me-2">Connexion</button>
                     <button type="button" class="btn btn-primary">S'inscrire</button>
                 </div>
             </header>
         </div>
 
-        <footer>
-            <div class="container">
-                {% block content %}{% endblock %}
-            </div>
+        <div class="my-5">
 
-            <div class="my-5">
-                <footer class="text-center text-white" style="background-color: #9bb7de;">
-                    <div class="container p-4 pb-0">
-                        <section class="mt-5">
-                            <div class="row text-center d-flex justify-content-center pt-5">
-                                <div class="col-md-2">
-                                    <h6 class="text-uppercase font-weight-bold">
-                                        <a href="#!" class="text-white">Accueil</a>
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="row text-center d-flex justify-content-center pt-5">
-                                <div class="col-md-2">
-                                    <h6 class="text-uppercase font-weight-bold">
-                                        <a href="#!" class="text-white">À Propos</a>
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="row text-center d-flex justify-content-center pt-5">
-                                <div class="col-md-2">
-                                    <h6 class="text-uppercase font-weight-bold">
-                                        <a href="#!" class="text-white">Contatc</a>
-                                    </h6>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
+            <section class="">
+                <footer class="text-center text-white" style="background-color: #004bad;">
 
-                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    <div class="text-center p-3">
                         &copy 2022 LexiGo
                     </div>
 
                 </footer>
-            </div>
 
-        </footer>
+            </section>
+
+        </div>
     </main>
     {% block javascript%}{% endblock %}
 </body>
