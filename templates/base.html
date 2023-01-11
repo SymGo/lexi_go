@@ -30,9 +30,14 @@
                     <li><a href="#" class="nav-link px-2">Contact</a></li>
                 </ul>
 
-                <div class="col-md-3 text-end">
+                <div class="col-md-3 text-end justify-content-center">
+                    {% if user.is_authenticated %}
+                    <p class="d-inline-block justify-content-center mr-3 text-white">Bienvenue, {{user.username}}.</p>
+                    <a type="button" class="btn btn-outline-primary me-2" href="{% url 'logout' %}">Déconnexion</a>
+                    {% else %}
                     <a type="button" class="btn btn-outline-primary me-2" href="{% url 'login' %}">Connexion</a>
                     <a type="button" class="btn btn-primary" href="{% url 'register' %}">S'inscrire</a>
+                    {% endif %}
                 </div>
             </header>
         </div>

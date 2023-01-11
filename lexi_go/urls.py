@@ -22,8 +22,9 @@ from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', myLexiGoApp.home),
-    path('', views.home, name='index'),
+    path('home/', views.home, name='index'),
     path('analyze/', csrf_exempt(myLexiGoApp.analyze)),
     path('login/', myLexiGoApp.user_login, name='login'),
     path('register/', myLexiGoApp.user_register, name='register'),
+    path('logout/', views.user_logout, name='logout'),
 ]

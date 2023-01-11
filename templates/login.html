@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group" style="padding-top:10px; padding-bottom:10px;">
                         <label for="password">Mot de passe :</label>
-                        <input type="text" name="password" class="form-control" required>
+                        <input type="password" name="password" class="form-control" required>
                     </div>
                     <div class="form-group form-check" style="padding-top:10px; padding-bottom:10px;">
                         <input type="checkbox" class="form-check-input" id="remember">
@@ -30,6 +30,13 @@
                         <a href="{% url 'register' %}" class="text-secondary mx-auto">Pas encore inscrit ?</a>
                     </div>
                 </form>
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -16,19 +16,25 @@
                     </div>
                     <div class="form-group" style="margin-top: 10px;">
                         <label for="password1">Mot de passe :</label><br>
-                        <input type="password" name="password1" class="form-control" required>
+                        <input type="password" name="password" class="form-control" required>
                     </div>
                     <div class="form-group" style="margin-top: 10px;">
                         <label for="password2">Confirmation du mot de passe :</label><br>
-                        <input type="password" name="password2" class="form-control" required>
+                        <input type="password" name="password_confirm" class="form-control" required>
                     </div>
                     <div class="form-group" style="margin-top: 10px;">
                         <button type="submit" class="btn btn-primary mx-auto d-block">S'inscrire</button>
                     </div>
-                    <div class="d-flex align-items-center" style="padding-top:10px; padding-bottom:10px;">
-                        <a href="{% url 'login' %}" class="text-secondary mx-auto">Se connecter</a>
-                    </div>
                 </form>
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                    <p>{{ field }}: {{ error }}</p>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

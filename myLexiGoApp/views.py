@@ -40,8 +40,9 @@ def user_login(request):
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
             if user is not None:
-                # 登录成功，重定向到主页
-                login(request, user, remember=True)
+                login(request, user)
+                # 0 for remembers the user until he closes the browser
+                request.session.set_expiry(0)
                 return redirect('index')
             else:
                 # 登录失败，提示用户名或密码错误
