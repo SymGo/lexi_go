@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="d-flex mx-auto">
+        <div class="card" style="margin:0 auto;">
+            <div class="card-header text-center">
+                <h4>Connexion</h4>
+            </div>
+            <div class="card-body">
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="form-group" style="padding-top:10px; padding-bottom:10px;">
+                        <label for="username">Nom d'utilisateur :</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="form-group" style="padding-top:10px; padding-bottom:10px;">
+                        <label for="password">Mot de passe :</label>
+                        <input type="text" name="password" class="form-control" required>
+                    </div>
+                    <div class="form-group form-check" style="padding-top:10px; padding-bottom:10px;">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">Se souvenir de moi</label>
+                    </div>
+                    <div class="d-flex justify-content-center" style="padding-top:10px; padding-bottom:10px;">
+                        <button type="submit" class="btn btn-primary mx-auto">Se connecter</button>
+                    </div>
+                    <div style="padding-top:10px; padding-bottom:10px;">
+                        <a href="#" class="text-secondary mx-auto">Mot de passe oublié ?</a>
+                        <a href="{% url 'register' %}" class="text-secondary mx-auto">Pas encore inscrit ?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
