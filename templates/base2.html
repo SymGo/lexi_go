@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiGo</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dosis">
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid" style="background-color: #9bb7de;">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <div class="mx-auto">
+                    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                        <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100">
+                    </a>
+                </div>
+            </header>
+        </div>
+
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer class="footer fixed-bottom text-center text-white" style="background-color: #004bad;">
+            <div class="text-center p-3">
+                &copy 2022 LexiGo
+            </div>
+        </footer>
+
+    </main>
+    {% block javascript%}{% endblock %}
+</body>
+
+</html>
