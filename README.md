@@ -1,6 +1,6 @@
 # User manual of LexiGo
 
-## IMPORTANT: It only works on Firefox Browser
+## IMPORTANT: It only works on Mozilla Firefox
 ### Package used
 #### Django 4.1.3
 #### DeepL 1.11.0
