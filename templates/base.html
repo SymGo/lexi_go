@@ -109,7 +109,10 @@
         </footer>
 
     </main>
-    {% block javascript%}{% endblock %}
+    {% block javascript%}
+    <!-- <script src="{% static 'styles/bootstrap/js/bootstrap.min.js' %}"></script> -->
+    <script src="{% static 'scripts/home.js' %}"></script>
+    {% endblock %}
 </body>
 
 </html>
