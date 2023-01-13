@@ -13,6 +13,55 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dosis">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+
+            #niveau {
+                display: none;
+            }
+
+            .logo {
+                text-align: center;
+            }
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            textarea {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            textarea {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            footer {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        @media (min-width: 576px) {
+            footer {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -21,15 +70,22 @@
             <header
                 class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100">
+                    <img src="{% static 'images/logo.svg' %}" alt="logo" width="160" height="100" class="logo">
                 </a>
-
-                <ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 active" aria-current="page">Accueil</a></li>
-                    <li><a href="#" class="nav-link px-2">À Propos</a></li>
-                    <li><a href="#" class="nav-link px-2">Contact</a></li>
+                <ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0 navbar">
+                    <li><a href="#" class="nav-link px-2 active" aria-current="page">Ma salle de tutorat</a></li>
+                    <li><a href="#" class="nav-link px-2">Ma bibliothèque</a></li>
+                    <div class="d-flex">
+                        <select id="niveau" class="custom-select">
+                            <option selected>Niveau de langue</option>
+                            <option value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                            <option value="C1">C1</option>
+                        </select>
+                    </div>
                 </ul>
-
                 <div class="col-md-3 text-end justify-content-center">
                     {% if user.is_authenticated %}
                     <p class="d-inline-block justify-content-center mr-3 text-white">Bienvenue, {{user.username}}.</p>
