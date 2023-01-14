@@ -10,4 +10,4 @@
 #### torch 1.13.1
 #### transformers 4.25.1
 #### tokenizers 0.13.2
-#### huggingface-hub 0.11.1
+#### aneuraz/awesome-align-with-co: A neural word aligner based on multilingual BERT 
